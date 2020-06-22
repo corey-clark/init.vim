@@ -1,3 +1,40 @@
+"Neovim setup
+
+call plug#begin('~/.local/share/nvim/site/pack/bundle/start')
+  Plug 'mileszs/ack.vim'
+  Plug 'Valloric/MatchTagAlways'
+  Plug 'dense-analysis/ale'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'APZelos/blamer.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'kien/ctrlp.vim'
+  Plug 'mattn/emmet-vim'
+  Plug 'shumphrey/fugitive-gitlab.vim'
+  Plug 'zivyangll/git-blame.vim'
+  Plug 'preservim/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'smerrill/vcl-vim-plugin'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'jparise/vim-graphql'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
+  Plug 'jxnblk/vim-mdx-js'
+  Plug 'prettier/vim-prettier'
+  Plug 'tpope/vim-repeat'
+  Plug 'hashivim/vim-terraform'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'juliosueiras/vim-terraform-completion'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'ianks/vim-tsx'
+  Plug 'wesQ3/vim-windowswap'
+  Plug 'vim-scripts/xoria256.vim'
+  Plug 'HerringtonDarkholme/yats.vim'
+call plug#end()
+
 set nocompatible
 
 syntax on 
