@@ -23,7 +23,6 @@ call plug#begin('~/.local/share/nvim/site/pack/bundle/start')
   Plug 'machakann/vim-highlightedyank'
   Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
   Plug 'jxnblk/vim-mdx-js'
-  Plug 'prettier/vim-prettier'
   Plug 'tpope/vim-repeat'
   Plug 'hashivim/vim-terraform'
   Plug 'vim-syntastic/syntastic'
@@ -33,6 +32,7 @@ call plug#begin('~/.local/share/nvim/site/pack/bundle/start')
   Plug 'wesQ3/vim-windowswap'
   Plug 'vim-scripts/xoria256.vim'
   Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.2.7' }
 call plug#end()
 
 set nocompatible
@@ -167,22 +167,19 @@ nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>b :ls<CR>:b<Space>
 
 " Prettier configs
+"============================================================
 
-" Favor config file in projects
+" auto format on save for the following file types
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+
+" Disable quickfix panel when syntax error occurs
+let g:prettier#quickfix_enabled = 0
+
+" prefer project config file config over defaults
 let g:prettier#config#config_precedence = 'prefer-file'
 
-let g:prettier#exec_cmd_async = 1
+"============================================================
 
-" print semicolons
-let g:prettier#config#semi = 'false'
-
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-
-" all prettier to auto format the code on file save
-let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
 
 let g:windowswap_map_keys = 0 "prevent default bindings
 nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
