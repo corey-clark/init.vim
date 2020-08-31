@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/site/pack/bundle/start')
   Plug 'jiangmiao/auto-pairs'
   Plug 'APZelos/blamer.nvim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'kien/ctrlp.vim'
   Plug 'mattn/emmet-vim'
   Plug 'shumphrey/fugitive-gitlab.vim'
   Plug 'zivyangll/git-blame.vim'
@@ -32,7 +31,9 @@ call plug#begin('~/.local/share/nvim/site/pack/bundle/start')
   Plug 'wesQ3/vim-windowswap'
   Plug 'vim-scripts/xoria256.vim'
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.2.7' }
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/1.0.0-alpha' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set nocompatible
@@ -145,6 +146,12 @@ nmap <leader>w :w!<cr>
 nmap <C-b> :NERDTreeToggle<cr>
 
 nmap <C-v> :NERDTreeFind<cr>
+
+" FZF settings
+nmap <C-p> :FZF<cr>
+
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
 
 nmap <C-h> <C-w>h
 
