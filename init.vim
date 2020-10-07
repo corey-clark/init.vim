@@ -169,6 +169,10 @@ nmap <Leader>zo :tabclose<CR>
 
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
+"CocSearch mappings
+nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
 nnoremap <Leader>a :Ack!<Space>
 
 nnoremap <Leader>b :ls<CR>:b<Space>
